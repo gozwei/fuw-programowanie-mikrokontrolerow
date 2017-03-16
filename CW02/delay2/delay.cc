@@ -2,11 +2,12 @@
 //
 // Wymagane polaczenia w ukladzie ZL15AVR:
 //        PA0 - LED 0
-//        PA1 - SW0
 //
 // Autor: Pawel Klimczewski, 15 stycznia 2010.
+// Autor: Marcin Polkowski , 16 marca 2017.
 
 #include <avr/io.h>
+#include <util/delay.h>
 
 //---------------------------------------------------------------------------
 void configure_pins()
@@ -20,20 +21,23 @@ void configure_pins()
 //---------------------------------------------------------------------------
 int main()
 {
-  configure_pins();
-  while ( true )
-  {
-    if ( PINA & 1 << PA1 )
-    {
-      // Na wyprowadzeniu PA1 mamy stan wysoki. Przycisk nie jest nacisniety.
-      PORTA &= ~( 1 << PA0 ); // Wylaczam diode.
-    }
-    else
-    {
-      // Na wyprowadzeniu PA1 mamy stan niski. Przycisk jest nacisniety.
-      PORTA |= 1 << PA0; // Wlaczam diode.
-    }
-  }
-  return 0;
+	configure_pins();
+	int d = 0;
+	while(true)
+	{
+		// Dioda mruga
+		// UWAGA: rozwiazanie prymitywne
+		PORTA |= 1 << PA0;
+		_delay_ms(d);
+		PORTA &= ~( 1 << PA0 ); 
+		_delay_ms(d);
+		
+		d = d + 5;
+		if(d > 250)
+		{
+			d = 0;
+		}
+	}
+	return 0;
 }
 //---------------------------------------------------------------------------
