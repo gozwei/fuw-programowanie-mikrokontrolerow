@@ -1,0 +1,6 @@
+*
+!*/
+!*.cc
+!*.c
+!*.bat
+!.gitignore
