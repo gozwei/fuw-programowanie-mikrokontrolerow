@@ -5,6 +5,11 @@ Materiały dydaktyczne do Programowania Mikrokontrolerów AVR na wydziale Fizyki
 
 ### Ćwiczenia 1
 
+Następujące zadania w ramach ćwiczeń:
+
+1. **button** - pierwszy przykład - program zapalający diodę led przy przytrzymawaniu przycisku.
+2. **walking_leds** - przykład operacji przesunięć bitowych i operacji logicznych: dwie poruszające się diody na wyświetlaczy 8-diodowym. 
+
 ### Ćwiczenia 2
 
 Następujące zadania w ramach ćwiczeń:
