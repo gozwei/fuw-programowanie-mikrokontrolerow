@@ -51,7 +51,7 @@ TARGETNAME = u8m2
 MCU:=atmega32
 F_CPU:=16000000
 WORKDIR:=.
-U8GM2DIR:=../../../_include\u8glib_oryg\
+U8GM2DIR:=../../../_include/u8glib_curr
 
 KAMPROG=kamprogavrc -d -f
 
