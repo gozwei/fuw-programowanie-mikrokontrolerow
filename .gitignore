@@ -2,5 +2,7 @@
 !*/
 !*.cc
 !*.c
+!*.h
+!Makefile
 !*.bat
 !.gitignore
