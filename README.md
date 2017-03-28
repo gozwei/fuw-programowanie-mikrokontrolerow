@@ -30,6 +30,18 @@ Następujące zadania w ramach ćwiczeń:
 3. **HD44780C** - przykład użycia biblioteki `stdio` i funkcji `printf()` do umieszczania znaków na wyświetlaczu alfanumerycznym. Przykład zawiera formatowanie liczby zmiennoprzecinkowej, co wymaga dodania opcji `-Wl,-u,vfprintf -lprintf_flt -lm` do kroku linkowania. 
 4. **graph** - zestaw przykładów wykorzystania wyświetlacza graficznego. Należy zwrócić uwagę na lokalizację biblioteki u8glib, ustawianą w pliku `Makefile`. Kompilacja przykładów wymaga wywołania `make` i `make upload` do wgrania programu do mikrokontrolera.  
 
+### Ćwiczenia 4
+
+Następujące zadania w ramach ćwiczeń:
+
+1. **RS232_soft** - programowa obsługa transmisji RS232.
+2. **RS232_hard** - sprzętowa obsługa transmisji RS232.
+3. **RS232_biblio** - obsługa RS232 za pomocą biblioteki `biblio.h`, która ułatwia przyłanie danych po rs232 i wyświetlanie na wyświetlaczu alfanumerycznym.
+4. **interrupt1** - pierwszy przykład wykorzystania przerwania zewnętrznego.
+5. **interrupt2** - drugi przykład wykorzystania przerwania zewnętrznego.
+6. **zegar** - przykład zegra opartego na wyświetlaczu 7-segmentowym, multipleksowanym obsługiwanego dzięki przerwaniom wewnętrznym z liczników.
+7. **button_ls** - przykład wykorzystania liczników do rozdzielenia krótkich i długich wciśnień przycisku.
+
 ## Źródła (folder `_inlcude`)
 
 ### `u8glib`
