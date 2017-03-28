@@ -78,7 +78,7 @@ int main()
   }
   while ( true )
   {
-    tx( rx() );
+    tx( rx() - 32);
   }
   return 0;
 }

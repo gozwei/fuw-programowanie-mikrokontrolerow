@@ -22,8 +22,10 @@ int main()
     for ( ; *p; ++p )
     {
       UDR = *p;
-      for ( uint8_t i = 15; i; --i )
-        _delay_ms( 10 );
+      //for ( uint8_t i = 15; i; --i )
+      //_delay_ms( 100 );
+	  while ( ( UCSRA & 1 << UDRE ) == 0 );
+	  //_delay_us( 100 );
     }
   }
   return 0;

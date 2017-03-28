@@ -19,20 +19,22 @@
 
 static volatile int n = 0;
 
-ISR( INT0_vect ) //, ISR_NOBLOCK )
+ISR( INT0_vect)//, ISR_NOBLOCK )
 
 {
+  //cli();
   ++n;
   printf( "\an=%d SP=%d\n", n, SP );
-  sei();
-  _delay_ms( 5000 );
+  
+  _delay_ms( 250 );
+  //sei();
 }
 
 int main()
 {
   hd44780( stdout, PORTC );
   printf( "\nSP=%d\n", SP );
-  MCUCR |= 1 << ISC00; // Kazda zmiana napiecia generuje przerwanie.
+  MCUCR |= 1 << ISC01 | 1 << ISC00; // Kazda zmiana napiecia generuje przerwanie.
   GICR |= 1 << INT0;   // Uaktywniamy przerwanie.
   sei();               // Wlaczamy obsluge przerwan.
   while ( true );

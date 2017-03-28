@@ -18,7 +18,7 @@ int main()
   {
 	count++;
     printf("%d\n", count);
-    _delay_ms(1000);
+    //_delay_ms(1000);
   }
   return 0;
 }
