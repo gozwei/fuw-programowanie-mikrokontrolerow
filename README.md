@@ -42,6 +42,15 @@ Następujące zadania w ramach ćwiczeń:
 6. **zegar** - przykład zegra opartego na wyświetlaczu 7-segmentowym, multipleksowanym obsługiwanego dzięki przerwaniom wewnętrznym z liczników.
 7. **button_ls** - przykład wykorzystania liczników do rozdzielenia krótkich i długich wciśnień przycisku.
 
+### Ćwiczenia 5
+
+Następujące zadania w ramach ćwiczeń:
+
+1. **nuty** - przykład wykorzytania liczników do generowania sygnału PWM o częstotliwościach odpowiadających nutom utworu "Do Elizy".
+2. **TC77_spi_soft** - przykład odczytu tempeartury z termometru TC77 po magistrali SPI obsługiwanej programowo + wysyłanie po RS232
+3. **TC77_spi_hard** - przykład odczytu tempeartury z termometru TC77 po magistrali SPI obsługiwanej sprzętowo + wysyłanie po RS232 liczby zmiennoprzecinkowej
+4. **TC77_graph** - przykład prezentacji pomiaru temperatury na wyświetlaczu graficzny w postaci wykresu w czasie
+
 ## Źródła (folder `_inlcude`)
 
 ### `u8glib`
