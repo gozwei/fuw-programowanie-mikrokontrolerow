@@ -3,6 +3,8 @@
 #include <inttypes.h>
 #include "biblio.h"
 
+#include <util/delay.h>
+
 // Obsluga pamieci EEPROM.
 //
 // Wymagane polaczenia w ukladzie ZL15AVR:
@@ -19,12 +21,21 @@
 
 int main()
 {
-  hd44780( stdout, PORTC );
+  //hd44780( stdout, PORTC );
+  usart(stdout);
+  _delay_ms(3000);
   uint8_t i;
   // Odczytuje bajt pamieci o adresie 0.
   i = eeprom_read_byte( 0 );
   printf( "eeprom[0]=%d\n\n", i );
-  ++i;
+  if(i==255)
+  {
+	i = 0;
+  }
+  else
+  {
+	++i;
+  }
   // Zapisuje bajt pamieci o adresie 0.
   eeprom_write_byte( 0, i );
   return 0;

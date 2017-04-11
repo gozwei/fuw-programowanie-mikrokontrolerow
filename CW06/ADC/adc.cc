@@ -1,5 +1,6 @@
 #include <avr/io.h>
 #include <inttypes.h>
+#include <util/delay.h>
 #include "biblio.h"
 
 // Obsluga przetwornika analogowo-cyfrowego.
@@ -35,10 +36,12 @@ uint16_t adc( uint8_t channel = 0 )
 
 int main()
 {
-  hd44780( stdout, PORTC );
+  //hd44780( stdout, PORTC );
+  usart(stdout);
   while ( true )
   {
-    printf( "%u\n\n", adc() );
+    printf( "%u\n", adc() );
+	_delay_ms(150);
   }
   return 0;
 }

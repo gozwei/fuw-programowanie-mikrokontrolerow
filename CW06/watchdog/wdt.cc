@@ -24,10 +24,11 @@ int main()
 {
   // Wlaczam uklad automatycznego zerowania po okresie 2 sekund.
   wdt_enable( WDTO_2S );
-  hd44780( stdout, PORTC );
+  //hd44780( stdout, PORTC );
+  usart(stdout);
   for ( uint8_t i = 0; ; ++i )
   {
-    printf( "%d\n\n", i );
+    printf( "%d\n", i );
     for ( uint8_t n = 100; n; --n )
     {
       if ( ( PINA & 1 << PA0 ) == 0 )

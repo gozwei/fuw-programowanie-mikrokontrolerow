@@ -1,6 +1,7 @@
 #include <avr/io.h>
 #include <stdio.h>
 #include <inttypes.h>
+#include <util/delay.h>
 #include "i2c.h"
 #include "biblio.h"
 
@@ -23,7 +24,8 @@
 
 int main()
 {
-  hd44780( stdout, PORTC );
+  //hd44780( stdout, PORTC );
+  usart( stdout );
   i2c_init();
   while ( true )
   {
@@ -39,7 +41,8 @@ int main()
     uint8_t h = i2c_read( NACK ) & 0x3f;
     i2c_stop();
     
-    printf( "%2x%c%02x\n\n", h, s & 0x01 ? ':' : ' ', m );    
+    printf( "%2x%c%02x\n", h, s & 0x01 ? ':' : ' ', m );   
+	_delay_ms(1000); 
   }
   return 0;
 }
